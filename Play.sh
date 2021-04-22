@@ -1,0 +1,8 @@
+#! /bin/bash
+sudo docker system prune --all -f
+
+sudo docker build -t covid-dungeon .
+
+sudo docker run -d -it --name python-game covid-dungeon
+
+sudo docker exec -it python-game /bin/bash 
